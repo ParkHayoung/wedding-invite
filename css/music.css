@@ -3,26 +3,46 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #fdf8f3;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: opacity 0.7s ease;
 }
 
 .music-overlay.is-hidden {
-  opacity: 0;
   pointer-events: none;
 }
 
+.music-overlay__curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #fdf8f3;
+  z-index: 1;
+  transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.music-overlay__curtain--left  { left: 0; }
+.music-overlay__curtain--right { right: 0; }
+
+.music-overlay.is-hidden .music-overlay__curtain--left  { transform: translateX(-100%); }
+.music-overlay.is-hidden .music-overlay__curtain--right { transform: translateX(100%); }
+
+.music-overlay.is-hidden .music-overlay__inner {
+  opacity: 0;
+}
+
 .music-overlay__inner {
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
   text-align: center;
   animation: overlay-fadein 1s ease both;
+  transition: opacity 0.15s ease;
 }
 
 @keyframes overlay-fadein {
@@ -75,6 +95,7 @@
 
 /* 꽃잎 */
 .music-overlay__petals {
+  z-index: 2;
   position: absolute;
   inset: 0;
   pointer-events: none;
