@@ -5,8 +5,8 @@
 (function () {
   // ⚠️ 결혼식 날짜를 여기서 수정하세요
   const weddingYear = 2026;
-  const weddingMonth = 1; // 1~12
-  const weddingDay = 1;
+  const weddingMonth = 9; // 1~12
+  const weddingDay = 12;
 
   const container = document.getElementById('calendar');
   if (!container) return;
