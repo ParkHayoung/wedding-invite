@@ -81,3 +81,9 @@
   font-size: 0.875rem;
   color: #999;
 }
+
+.info__calendar-save {
+  display: inline-flex;
+  margin-top: 24px;
+  font-size: 0.8125rem;
+}
