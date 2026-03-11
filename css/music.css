@@ -1,3 +1,101 @@
+/* 시작 오버레이 */
+.music-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #fdf8f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.7s ease;
+}
+
+.music-overlay.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.music-overlay__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  animation: overlay-fadein 1s ease both;
+}
+
+@keyframes overlay-fadein {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.music-overlay__deco {
+  font-size: 1rem;
+  color: #b5a898;
+  letter-spacing: 0.3em;
+}
+
+.music-overlay__subtitle {
+  font-family: 'Gowun Batang', serif;
+  font-size: 0.8rem;
+  color: #b5a898;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.music-overlay__names {
+  font-family: 'Gowun Batang', serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #4a3f35;
+  letter-spacing: 0.05em;
+}
+
+.music-overlay__date {
+  font-family: 'Gowun Batang', serif;
+  font-size: 0.88rem;
+  color: #7a7269;
+  letter-spacing: 0.15em;
+}
+
+.music-overlay__hint {
+  margin-top: 20px;
+  font-family: 'Gowun Batang', serif;
+  font-size: 0.78rem;
+  color: #b5a898;
+  letter-spacing: 0.1em;
+  animation: hint-pulse 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes hint-pulse {
+  from { opacity: 0.4; }
+  to   { opacity: 1; }
+}
+
+/* 꽃잎 */
+.music-overlay__petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -40px;
+  opacity: 0;
+  animation: petal-fall linear infinite;
+  user-select: none;
+}
+
+@keyframes petal-fall {
+  0%   { transform: translateY(0) rotate(0deg) scale(1); opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(110vh) rotate(360deg) scale(0.7); opacity: 0; }
+}
+
 /* 배경음악 버튼 */
 .music-btn {
   position: fixed;

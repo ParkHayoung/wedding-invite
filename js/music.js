@@ -1,17 +1,16 @@
 /**
  * 배경음악 플레이어
- * - 첫 사용자 인터랙션 시 자동 재생 시도 (브라우저 정책 대응)
+ * - 오버레이 탭 시 음악 재생 + 오버레이 닫힘
  * - 버튼으로 재생/일시정지 토글
  */
 (function () {
   const audio = document.getElementById('bg-music');
   const btn = document.getElementById('music-btn');
+  const overlay = document.getElementById('music-overlay');
   if (!audio || !btn) return;
 
   const iconPlay = btn.querySelector('.music-btn__icon--play');
   const iconPause = btn.querySelector('.music-btn__icon--pause');
-
-  let started = false;
 
   function setPlaying(playing) {
     iconPlay.hidden = playing;
@@ -27,9 +26,35 @@
     });
   }
 
-  // 버튼 클릭: 토글
+  // 꽃잎 생성
+  const petalContainer = document.getElementById('music-overlay-petals');
+  if (petalContainer) {
+    const petals = ['🌸', '🌺', '🌼'];
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('span');
+      p.className = 'petal';
+      p.textContent = petals[i % petals.length];
+      p.style.left = `${Math.random() * 100}%`;
+      p.style.animationDuration = `${4 + Math.random() * 5}s`;
+      p.style.animationDelay = `${Math.random() * 6}s`;
+      p.style.fontSize = `${0.7 + Math.random() * 0.8}rem`;
+      petalContainer.appendChild(p);
+    }
+  }
+
+  // 오버레이 탭: 닫고 재생
+  if (overlay) {
+    document.body.style.overflow = 'hidden';
+    overlay.addEventListener('click', () => {
+      overlay.classList.add('is-hidden');
+      document.body.style.overflow = '';
+      setTimeout(() => overlay.remove(), 650);
+      tryPlay();
+    });
+  }
+
+  // 재생/일시정지 버튼
   btn.addEventListener('click', () => {
-    started = true;
     if (audio.paused) {
       tryPlay();
     } else {
@@ -37,17 +62,4 @@
       setPlaying(false);
     }
   });
-
-  // 첫 사용자 인터랙션 시 자동 재생 시도
-  function onFirstInteraction() {
-    if (started) return;
-    started = true;
-    tryPlay();
-    document.removeEventListener('touchstart', onFirstInteraction);
-    document.removeEventListener('click', onFirstInteraction);
-  }
-
-  document.addEventListener('touchstart', onFirstInteraction, { once: true });
-  document.addEventListener('click', onFirstInteraction, { once: true });
-  document.addEventListener('scroll', onFirstInteraction, { once: true });
 })();
