@@ -1,0 +1,56 @@
+/* 배경음악 버튼 */
+.music-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #d4cec6;
+  color: #7a7269;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.music-btn:active {
+  transform: scale(0.93);
+  background: #f0ede8;
+}
+
+.music-btn__note {
+  font-size: 0.65rem;
+  line-height: 1;
+  color: #a89f95;
+}
+
+/* 재생 중일 때 음표 애니메이션 */
+.music-btn--playing .music-btn__note {
+  animation: music-note 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes music-note {
+  from { opacity: 0.5; transform: translateY(0); }
+  to   { opacity: 1;   transform: translateY(-2px); }
+}
+
+.music-btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.music-btn__icon[hidden] {
+  display: none;
+}
