@@ -1,0 +1,19 @@
+/* Scroll Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger > .fade-up:nth-child(1) { transition-delay: 0s; }
+.stagger > .fade-up:nth-child(2) { transition-delay: 0.1s; }
+.stagger > .fade-up:nth-child(3) { transition-delay: 0.2s; }
+.stagger > .fade-up:nth-child(4) { transition-delay: 0.3s; }
+.stagger > .fade-up:nth-child(5) { transition-delay: 0.4s; }
+.stagger > .fade-up:nth-child(6) { transition-delay: 0.5s; }

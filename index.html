@@ -7,13 +7,16 @@
 
   <!-- OG Tags for 카카오톡 공유 -->
   <meta property="og:title" content="○○ ♥ ○○ 결혼합니다">
-  <meta property="og:description" content="2026년 0월 0일 토요일 오후 0시">
+  <meta property="og:description" content="2026년 9월 12일 토요일 오후 4시 50분">
   <meta property="og:type" content="website">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Noto+Serif+KR:wght@200;400;600&display=swap" rel="stylesheet">
+
+  <!-- Kakao Map SDK -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f8753407c6bab9d3c5a1d9e70c9d3946&autoload=false"></script>
 
   <link rel="stylesheet" href="css/reset.css?v=1.0">
   <link rel="stylesheet" href="css/common.css?v=1.0">
@@ -23,62 +26,116 @@
   <link rel="stylesheet" href="css/location.css?v=1.0">
   <link rel="stylesheet" href="css/contact.css?v=1.0">
   <link rel="stylesheet" href="css/account.css?v=1.0">
+  <link rel="stylesheet" href="css/gallery.css?v=1.0">
+  <link rel="stylesheet" href="css/dday.css?v=1.0">
+  <link rel="stylesheet" href="css/animation.css?v=1.0">
 </head>
 <body>
   <!-- 1. 메인 비주얼 -->
   <section id="hero" class="section hero">
-    <p class="hero__label">Wedding Invitation</p>
-    <h1 class="hero__names">
+    <p class="hero__label fade-up">Wedding Invitation</p>
+    <h1 class="hero__names fade-up">
       <span class="hero__groom">신랑이름</span>
       <span class="hero__amp">&amp;</span>
       <span class="hero__bride">신부이름</span>
     </h1>
-    <p class="hero__date">2026. 00. 00. SAT PM 0:00</p>
-    <p class="hero__venue">예식장 이름</p>
+    <p class="hero__date fade-up">2026. 09. 12. SAT PM 4:50</p>
+    <p class="hero__venue fade-up">더파티움 안양</p>
   </section>
 
   <!-- 2. 인사말 -->
   <section id="greeting" class="section greeting">
-    <h2 class="section__title">초대합니다</h2>
-    <p class="greeting__text">
+    <h2 class="section__title fade-up">초대합니다</h2>
+    <p class="greeting__text fade-up">
       서로 다른 길을 걸어온 두 사람이<br>
       이제 같은 길을 함께 걸어가려 합니다.<br><br>
       귀한 걸음 하시어<br>
       축복해 주시면 감사하겠습니다.
     </p>
-    <div class="greeting__parents">
+    <div class="greeting__parents fade-up">
       <p><span class="parent-name">신랑아버지</span> · <span class="parent-name">신랑어머니</span>의 아들 <strong>신랑이름</strong></p>
       <p><span class="parent-name">신부아버지</span> · <span class="parent-name">신부어머니</span>의 딸 <strong>신부이름</strong></p>
     </div>
   </section>
 
-  <!-- 3. 예식 정보 -->
-  <section id="info" class="section info">
-    <h2 class="section__title">예식 안내</h2>
-    <div class="info__calendar" id="calendar"></div>
-    <div class="info__detail">
-      <p class="info__datetime">2026년 0월 0일 토요일 오후 0시</p>
-      <p class="info__venue">예식장 이름 0층 홀이름</p>
+  <!-- 3. 갤러리 -->
+  <section id="gallery" class="section gallery">
+    <h2 class="section__title fade-up">갤러리</h2>
+    <div class="gallery__grid stagger">
+      <!-- ⚠️ assets/gallery/ 폴더에 사진을 넣고 경로를 수정하세요 -->
+      <div class="gallery__item fade-up"><img src="assets/gallery/01.jpg" alt="웨딩 사진 1"></div>
+      <div class="gallery__item fade-up"><img src="assets/gallery/02.jpg" alt="웨딩 사진 2"></div>
+      <div class="gallery__item fade-up"><img src="assets/gallery/03.jpg" alt="웨딩 사진 3"></div>
+      <div class="gallery__item fade-up"><img src="assets/gallery/04.jpg" alt="웨딩 사진 4"></div>
+      <div class="gallery__item fade-up"><img src="assets/gallery/05.jpg" alt="웨딩 사진 5"></div>
+      <div class="gallery__item fade-up"><img src="assets/gallery/06.jpg" alt="웨딩 사진 6"></div>
     </div>
   </section>
 
-  <!-- 4. 오시는 길 -->
-  <section id="location" class="section location">
-    <h2 class="section__title">오시는 길</h2>
-    <div class="location__map" id="map"></div>
-    <div class="location__address">
-      <p>예식장 주소를 입력하세요</p>
-      <button class="btn btn--copy" data-copy="예식장 주소를 입력하세요">주소 복사</button>
+  <!-- 라이트박스 -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" aria-label="닫기">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" aria-label="이전">&#8249;</button>
+    <img class="lightbox__img" src="" alt="갤러리 사진">
+    <button class="lightbox__nav lightbox__nav--next" aria-label="다음">&#8250;</button>
+    <span class="lightbox__counter"></span>
+  </div>
+
+  <!-- 4. 예식 정보 -->
+  <section id="info" class="section info">
+    <h2 class="section__title fade-up">예식 안내</h2>
+    <div class="info__calendar fade-up" id="calendar"></div>
+    <div class="info__detail fade-up">
+      <p class="info__datetime">2026년 9월 12일 토요일 오후 4시 50분</p>
+      <p class="info__venue">더파티움 안양 5층 브리엘 홀</p>
     </div>
-    <div class="location__links">
+  </section>
+
+  <!-- D-Day 카운트다운 -->
+  <section id="dday" class="section dday">
+    <h2 class="section__title fade-up">D-Day</h2>
+    <div class="dday__counter fade-up">
+      <div class="dday__unit">
+        <span class="dday__number" id="dday-days">0</span>
+        <span class="dday__label">DAYS</span>
+      </div>
+      <span class="dday__separator">:</span>
+      <div class="dday__unit">
+        <span class="dday__number" id="dday-hours">0</span>
+        <span class="dday__label">HOURS</span>
+      </div>
+      <span class="dday__separator">:</span>
+      <div class="dday__unit">
+        <span class="dday__number" id="dday-mins">0</span>
+        <span class="dday__label">MINS</span>
+      </div>
+      <span class="dday__separator">:</span>
+      <div class="dday__unit">
+        <span class="dday__number" id="dday-secs">0</span>
+        <span class="dday__label">SECS</span>
+      </div>
+    </div>
+    <p class="dday__message fade-up" id="dday-message"></p>
+  </section>
+
+  <!-- 오시는 길 -->
+  <section id="location" class="section location">
+    <h2 class="section__title fade-up">오시는 길</h2>
+    <div class="location__map fade-up" id="map" style="width:100%;height:250px;"></div>
+    <div class="location__address fade-up">
+      <p>경기 안양시 동안구 시민대로 311 금강스마트빌딩 5층</p>
+      <button class="btn btn--copy" data-copy="경기 안양시 동안구 시민대로 311 금강스마트빌딩 5층">주소 복사</button>
+    </div>
+    <div class="location__links fade-up">
       <a href="#" class="btn btn--outline" id="naverMapLink">네이버 지도</a>
       <a href="#" class="btn btn--outline" id="kakaoMapLink">카카오맵</a>
+      <a href="#" class="btn btn--outline" id="tmapLink">티맵</a>
     </div>
   </section>
 
   <!-- 5. 연락처 -->
   <section id="contact" class="section contact">
-    <h2 class="section__title">연락하기</h2>
+    <h2 class="section__title fade-up">연락하기</h2>
     <div class="contact__group">
       <h3 class="contact__label">신랑측</h3>
       <div class="contact__row">
@@ -125,7 +182,7 @@
 
   <!-- 6. 축의금 계좌 안내 -->
   <section id="account" class="section account">
-    <h2 class="section__title">마음 전하실 곳</h2>
+    <h2 class="section__title fade-up">마음 전하실 곳</h2>
     <div class="account__group">
       <button class="account__toggle" data-target="groom-accounts">
         신랑측 계좌번호
@@ -159,7 +216,11 @@
     <p>Thank you</p>
   </footer>
 
+  <script src="js/map.js?v=1.0"></script>
   <script src="js/calendar.js?v=1.0"></script>
+  <script src="js/gallery.js?v=1.0"></script>
+  <script src="js/dday.js?v=1.0"></script>
+  <script src="js/animation.js?v=1.0"></script>
   <script src="js/main.js?v=1.0"></script>
 </body>
 </html>

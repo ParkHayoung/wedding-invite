@@ -1,0 +1,44 @@
+/* D-Day Countdown */
+.dday {
+  text-align: center;
+}
+
+.dday__counter {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.dday__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dday__number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #5a5a5a;
+  line-height: 1;
+  font-family: 'Noto Serif KR', serif;
+}
+
+.dday__label {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+}
+
+.dday__separator {
+  font-size: 1.5rem;
+  color: #c9c2b6;
+  align-self: flex-start;
+  padding-top: 4px;
+}
+
+.dday__message {
+  font-size: 0.875rem;
+  color: #999;
+}
