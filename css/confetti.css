@@ -1,0 +1,21 @@
+/* 컨페티 */
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -16px;
+  opacity: 0;
+  animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg) scale(1); opacity: 1; }
+  85%  { opacity: 1; }
+  100% { transform: translateY(110vh) translateX(var(--drift, 0px)) rotate(var(--spin, 360deg)) scale(0.6); opacity: 0; }
+}
