@@ -25,8 +25,11 @@
     });
   }
 
-  // 오버레이 닫힘 시 재생
-  document.addEventListener('overlay:dismissed', tryPlay);
+  // 오버레이 탭 시 재생 (iOS는 커스텀 이벤트가 사용자 제스처로 인정 안 됨 → 직접 click 수신)
+  const overlay = document.getElementById('music-overlay');
+  if (overlay) {
+    overlay.addEventListener('click', tryPlay, { once: true });
+  }
 
   // 재생/일시정지 버튼
   btn.addEventListener('click', () => {
