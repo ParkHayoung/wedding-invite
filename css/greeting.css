@@ -1,0 +1,26 @@
+.greeting {
+  text-align: center;
+}
+
+.greeting__text {
+  font-size: 0.9375rem;
+  font-weight: 200;
+  line-height: 2;
+  color: #5a5a5a;
+  margin-bottom: 40px;
+}
+
+.greeting__parents {
+  font-size: 0.875rem;
+  color: #7a7a7a;
+  line-height: 2;
+}
+
+.greeting__parents strong {
+  font-weight: 600;
+  color: #3a3a3a;
+}
+
+.parent-name {
+  font-weight: 400;
+}

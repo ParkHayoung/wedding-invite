@@ -1,0 +1,83 @@
+.info {
+  text-align: center;
+}
+
+/* Mini Calendar */
+.info__calendar {
+  max-width: 320px;
+  margin: 0 auto 32px;
+}
+
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar__header {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #5a5a5a;
+  padding-bottom: 16px;
+  text-align: center;
+}
+
+.calendar th {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #aaa;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.calendar th:first-child {
+  color: #d4878f;
+}
+
+.calendar td {
+  font-size: 0.8125rem;
+  color: #888;
+  padding: 6px 0;
+  text-align: center;
+}
+
+.calendar td.sunday {
+  color: #d4878f;
+}
+
+.calendar td.today {
+  position: relative;
+}
+
+.calendar td.today::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #b8a99a;
+  z-index: -1;
+}
+
+.calendar td.today {
+  color: #fff;
+  font-weight: 600;
+}
+
+.info__detail {
+  margin-top: 8px;
+}
+
+.info__datetime {
+  font-size: 0.9375rem;
+  color: #5a5a5a;
+  margin-bottom: 6px;
+}
+
+.info__venue {
+  font-size: 0.875rem;
+  color: #999;
+}

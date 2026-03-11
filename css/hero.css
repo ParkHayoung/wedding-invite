@@ -1,0 +1,40 @@
+.hero {
+  text-align: center;
+  padding: 80px 24px 60px;
+  background: linear-gradient(180deg, #f5f0e8 0%, #faf9f6 100%);
+}
+
+.hero__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #a09688;
+  margin-bottom: 40px;
+}
+
+.hero__names {
+  font-size: 1.75rem;
+  font-weight: 200;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.hero__amp {
+  display: block;
+  font-size: 1rem;
+  color: #b8a99a;
+  margin: 4px 0;
+}
+
+.hero__date {
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  color: #7a7a7a;
+  margin-bottom: 8px;
+}
+
+.hero__venue {
+  font-size: 0.875rem;
+  color: #999;
+}

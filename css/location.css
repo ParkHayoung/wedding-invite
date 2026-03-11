@@ -1,0 +1,32 @@
+.location {
+  text-align: center;
+}
+
+.location__map {
+  width: 100%;
+  height: 250px;
+  background: #e8e4de;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 0.875rem;
+}
+
+.location__address {
+  margin-bottom: 20px;
+}
+
+.location__address p {
+  font-size: 0.875rem;
+  color: #5a5a5a;
+  margin-bottom: 12px;
+}
+
+.location__links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}

@@ -1,0 +1,72 @@
+.account {
+  text-align: center;
+}
+
+.account__group {
+  margin-bottom: 16px;
+  border: 1px solid #e8e4de;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.account__group:last-child {
+  margin-bottom: 0;
+}
+
+.account__toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  font-size: 0.9375rem;
+  color: #5a5a5a;
+  background: #fff;
+  transition: background 0.2s;
+}
+
+.account__toggle:active {
+  background: #f8f7f4;
+}
+
+.account__arrow {
+  transition: transform 0.3s ease;
+}
+
+.account__toggle.open .account__arrow {
+  transform: rotate(180deg);
+}
+
+.account__list {
+  border-top: 1px solid #e8e4de;
+  background: #fdfcfa;
+}
+
+.account__item {
+  padding: 20px;
+}
+
+.account__item + .account__item {
+  border-top: 1px solid #f0ede8;
+}
+
+.account__info {
+  font-size: 0.9375rem;
+  color: #3a3a3a;
+  margin-bottom: 4px;
+}
+
+.account__holder {
+  font-size: 0.8125rem;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 0.75rem;
+  color: #ccc;
+  letter-spacing: 0.1em;
+}

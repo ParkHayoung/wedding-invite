@@ -1,0 +1,87 @@
+/* Layout */
+.section {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.section__title {
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-bottom: 32px;
+  color: #5a5a5a;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  transition: all 0.2s ease;
+}
+
+.btn--copy {
+  border: 1px solid #c9c2b6;
+  color: #5a5a5a;
+  background: #fff;
+}
+
+.btn--copy:active {
+  background: #f0ede8;
+}
+
+.btn--outline {
+  border: 1px solid #c9c2b6;
+  color: #5a5a5a;
+  padding: 10px 24px;
+}
+
+.btn--outline:active {
+  background: #f0ede8;
+}
+
+.btn--icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #c9c2b6;
+  color: #7a7a7a;
+}
+
+.btn--icon:active {
+  background: #f0ede8;
+}
+
+/* Divider */
+.section + .section {
+  border-top: 1px solid #e8e4de;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-size: 0.8125rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
