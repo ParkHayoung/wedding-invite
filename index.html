@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>결혼합니다</title>
 
-  <!-- OG Tags for 카카오톡 공유 -->
+  <!-- ⚠️ OG 태그는 크롤러가 JS를 실행하지 않으므로 직접 수정해주세요 -->
   <meta property="og:title" content="승현 ♥ 하영 결혼합니다">
   <meta property="og:description" content="2026년 9월 12일 토요일 오후 4시 50분">
   <meta property="og:type" content="website">
@@ -33,36 +33,16 @@
   <link rel="stylesheet" href="css/confetti.css?v=1.0">
 </head>
 <body>
-  <!-- 1. 메인 비주얼 -->
-  <section id="hero" class="section hero">
-    <p class="hero__label fade-up">Wedding Invitation</p>
-    <h1 class="hero__names fade-up">
-      <span class="hero__groom">문승현</span>
-      <span class="hero__amp">&amp;</span>
-      <span class="hero__bride">박하영</span>
-    </h1>
-    <p class="hero__date fade-up">2026. 09. 12. SAT PM 4:50</p>
-    <p class="hero__venue fade-up">더파티움 안양 5F 브리엘홀</p>
-  </section>
+  <!-- 1. 메인 비주얼 — render.js 에서 동적 렌더링 -->
+  <section id="hero" class="section hero"></section>
 
-  <!-- 2. 인사말 -->
+  <!-- 2. 인사말 — 텍스트·부모 소개는 render.js 에서 동적 렌더링 -->
   <section id="greeting" class="section greeting">
     <div class="greeting__divider fade-up"><span>✦</span></div>
     <h2 class="section__title fade-up">초대합니다</h2>
-    <p class="greeting__text fade-up">
-      함께 있을 때 가장 나다운 모습이 되고<br>
-      함께 있을 때 미래를 꿈꾸게 하는 사람을 만나<br>
-      함께 맞는 4번째 가을, 결혼합니다.<br><br>
-      지금처럼 서로에게 가장 친한 친구가 되어<br>
-      예쁘고 행복하게 잘 살겠습니다.<br><br>
-      저희 두 사람의 새로운 시작을 함께하시어<br>
-      축복해 주시면 감사하겠습니다.<br>
-    </p>
+    <p class="greeting__text fade-up" id="greeting-text"></p>
     <hr class="divider--short fade-up">
-    <div class="greeting__parents fade-up">
-      <p><span class="parent-name">신랑아버지</span> · <span class="parent-name">신랑어머니</span>의 아들 <strong>문승현</strong></p>
-      <p><span class="parent-name">박상수</span> · <span class="parent-name">오미경</span>의 딸 <strong>박하영</strong></p>
-    </div>
+    <div class="greeting__parents fade-up" id="greeting-parents"></div>
   </section>
 
   <!-- 3. 갤러리 -->
@@ -129,10 +109,8 @@
   <section id="location" class="section location">
     <h2 class="section__title fade-up">오시는 길</h2>
     <div class="location__map fade-up" id="map" style="width:100%;height:250px;"></div>
-    <div class="location__address fade-up">
-      <p>경기 안양시 동안구 시민대로 311 금강스마트빌딩 5층</p>
-      <button class="btn btn--copy" data-copy="경기 안양시 동안구 시민대로 311 금강스마트빌딩 5층">주소 복사</button>
-    </div>
+    <!-- 주소는 render.js 에서 동적 렌더링 -->
+    <div class="location__address fade-up" id="location-address"></div>
     <div class="location__links fade-up">
       <a href="#" class="btn btn--outline" id="naverMapLink">네이버 지도</a>
       <a href="#" class="btn btn--outline" id="kakaoMapLink">카카오맵</a>
@@ -140,82 +118,14 @@
     </div>
   </section>
 
-  <!-- 5. 연락처 -->
+  <!-- 5. 연락처 — contact.js 에서 동적 렌더링 -->
   <section id="contact" class="section contact">
     <h2 class="section__title fade-up">연락하기</h2>
-    <div class="contact__group">
-      <h3 class="contact__label">신랑측</h3>
-      <div class="contact__row">
-        <span class="contact__name">신랑이름</span>
-        <a href="tel:010-0000-0000" class="btn btn--icon" aria-label="전화">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        </a>
-      </div>
-      <div class="contact__row">
-        <span class="contact__name">아버지 이름</span>
-        <a href="tel:010-0000-0000" class="btn btn--icon" aria-label="전화">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        </a>
-      </div>
-      <div class="contact__row">
-        <span class="contact__name">어머니 이름</span>
-        <a href="tel:010-0000-0000" class="btn btn--icon" aria-label="전화">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="contact__group">
-      <h3 class="contact__label">신부측</h3>
-      <div class="contact__row">
-        <span class="contact__name">신부이름</span>
-        <a href="tel:010-0000-0000" class="btn btn--icon" aria-label="전화">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        </a>
-      </div>
-      <div class="contact__row">
-        <span class="contact__name">아버지 이름</span>
-        <a href="tel:010-0000-0000" class="btn btn--icon" aria-label="전화">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        </a>
-      </div>
-      <div class="contact__row">
-        <span class="contact__name">어머니 이름</span>
-        <a href="tel:010-0000-0000" class="btn btn--icon" aria-label="전화">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        </a>
-      </div>
-    </div>
   </section>
 
-  <!-- 6. 축의금 계좌 안내 -->
+  <!-- 6. 축의금 계좌 안내 — render.js 에서 동적 렌더링 -->
   <section id="account" class="section account">
     <h2 class="section__title fade-up">마음 전하실 곳</h2>
-    <div class="account__group">
-      <button class="account__toggle" data-target="groom-accounts">
-        신랑측 계좌번호
-        <svg class="account__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="account__list" id="groom-accounts" hidden>
-        <div class="account__item">
-          <p class="account__info">신한은행 110-000-000000</p>
-          <p class="account__holder">예금주: 신랑이름</p>
-          <button class="btn btn--copy" data-copy="신한은행 110-000-000000">복사</button>
-        </div>
-      </div>
-    </div>
-    <div class="account__group">
-      <button class="account__toggle" data-target="bride-accounts">
-        신부측 계좌번호
-        <svg class="account__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="account__list" id="bride-accounts" hidden>
-        <div class="account__item">
-          <p class="account__info">국민은행 000-00-0000-000</p>
-          <p class="account__holder">예금주: 신부이름</p>
-          <button class="btn btn--copy" data-copy="국민은행 000-00-0000-000">복사</button>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- Footer -->
@@ -237,8 +147,11 @@
     <span class="music-btn__note">♪</span>
   </button>
 
+  <script src="js/config.js?v=1.0"></script>
+  <script src="js/render.js?v=1.0"></script>
   <script src="js/map.js?v=1.0"></script>
   <script src="js/calendar.js?v=1.0"></script>
+  <script src="js/contact.js?v=1.0"></script>
   <script src="js/gallery.js?v=1.0"></script>
   <script src="js/dday.js?v=1.0"></script>
   <script src="js/animation.js?v=1.0"></script>

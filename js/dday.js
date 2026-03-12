@@ -1,9 +1,14 @@
 /**
  * D-Day 카운트다운
+ * js/config.js 의 WEDDING_CONFIG 를 참조합니다.
  */
 (function () {
-  // ⚠️ 결혼식 날짜를 수정하세요
-  const weddingDate = new Date('2026-09-12T16:50:00+09:00');
+  const { year, month, day, time } = WEDDING_CONFIG;
+  const [hour, min] = time.split(':');
+  const pad = (n) => String(n).padStart(2, '0');
+  const weddingDate = new Date(
+    `${year}-${pad(month)}-${pad(day)}T${pad(hour)}:${pad(min)}:00+09:00`
+  );
 
   const daysEl = document.getElementById('dday-days');
   const hoursEl = document.getElementById('dday-hours');

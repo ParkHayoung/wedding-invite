@@ -1,28 +1,23 @@
 /**
  * 미니 달력 생성
- * weddingDate를 수정하면 해당 월 달력이 자동 생성됩니다.
+ * js/config.js 의 WEDDING_CONFIG 를 참조합니다.
  */
 (function () {
-  // ⚠️ 결혼식 날짜를 여기서 수정하세요
-  const weddingYear = 2026;
-  const weddingMonth = 9; // 1~12
-  const weddingDay = 12;
-  const weddingDatetime = '2026년 9월 12일 토요일 오후 4시 50분';
-  const weddingVenue = '더파티움 안양 5층 브리엘홀';
+  const { year, month, day, datetimeLabel, venue } = WEDDING_CONFIG;
 
   const container = document.getElementById('calendar');
   if (!container) return;
 
   const days = ['일', '월', '화', '수', '목', '금', '토'];
-  const firstDay = new Date(weddingYear, weddingMonth - 1, 1).getDay();
-  const lastDate = new Date(weddingYear, weddingMonth, 0).getDate();
+  const firstDay = new Date(year, month - 1, 1).getDay();
+  const lastDate = new Date(year, month, 0).getDate();
 
   let html = '<table class="calendar">';
 
-  // Header - Year.Month.Day + datetime + venue
+  // Header
   html += `<caption class="calendar__header">
-    <p class="calendar__datetime">${weddingDatetime}</p>
-    <p class="calendar__venue">${weddingVenue}</p>
+    <p class="calendar__datetime">${datetimeLabel}</p>
+    <p class="calendar__venue">${venue}</p>
   </caption>`;
 
   // Day names
@@ -46,7 +41,7 @@
     }
 
     const isSunday = dayOfWeek === 0;
-    const isWeddingDay = date === weddingDay;
+    const isWeddingDay = date === day;
     const classes = [];
     if (isSunday) classes.push('sunday');
     if (isWeddingDay) classes.push('today');

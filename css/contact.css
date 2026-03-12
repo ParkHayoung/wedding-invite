@@ -11,9 +11,9 @@
 }
 
 .contact__label {
-  font-size: 0.8125rem;
-  font-weight: 400;
-  color: #aaa;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #5a5a5a;
   letter-spacing: 0.05em;
   margin-bottom: 16px;
 }
@@ -23,12 +23,30 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .contact__name {
-  font-size: 0.9375rem;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-end;
+  width: 120px;
+  gap: 4px;
+}
+
+.contact__role {
+  font-size: 0.8125rem;
+  color: #aaa;
+  letter-spacing: 0.03em;
+}
+
+.contact__person {
+  font-size: 1.0625rem;
   color: #5a5a5a;
-  min-width: 80px;
-  text-align: right;
+}
+
+.contact__btns {
+  display: flex;
+  gap: 8px;
 }

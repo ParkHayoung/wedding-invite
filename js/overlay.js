@@ -8,6 +8,7 @@
   const overlay = document.createElement('div');
   overlay.id = 'music-overlay';
   overlay.className = 'music-overlay';
+  const { groom, bride, heroDate } = WEDDING_CONFIG;
   overlay.innerHTML = `
     <div class="music-overlay__curtain music-overlay__curtain--left"></div>
     <div class="music-overlay__curtain music-overlay__curtain--right"></div>
@@ -15,8 +16,8 @@
     <div class="music-overlay__inner">
       <p class="music-overlay__deco">🤵🏻 ✦ 👰🏻‍♀️</p>
       <p class="music-overlay__subtitle">We're getting married</p>
-      <h2 class="music-overlay__names">문승현 ❤️ 박하영</h2>
-      <p class="music-overlay__date">2026. 09. 12. SAT</p>
+      <h2 class="music-overlay__names">${groom.name} ❤️ ${bride.name}</h2>
+      <p class="music-overlay__date">${heroDate}</p>
       <p class="music-overlay__hint">터치하여 청첩장 열기</p>
     </div>
   `;
