@@ -7,6 +7,8 @@
   const weddingYear = 2026;
   const weddingMonth = 9; // 1~12
   const weddingDay = 12;
+  const weddingDatetime = '2026년 9월 12일 토요일 오후 4시 50분';
+  const weddingVenue = '더파티움 안양 5층 브리엘홀';
 
   const container = document.getElementById('calendar');
   if (!container) return;
@@ -17,8 +19,11 @@
 
   let html = '<table class="calendar">';
 
-  // Header - Year.Month
-  html += `<caption class="calendar__header">${weddingYear}. ${String(weddingMonth).padStart(2, '0')}</caption>`;
+  // Header - Year.Month.Day + datetime + venue
+  html += `<caption class="calendar__header">
+    <p class="calendar__datetime">${weddingDatetime}</p>
+    <p class="calendar__venue">${weddingVenue}</p>
+  </caption>`;
 
   // Day names
   html += '<thead><tr>';

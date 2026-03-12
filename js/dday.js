@@ -18,11 +18,12 @@
     const diff = weddingDate - now;
 
     if (diff <= 0) {
+      const isToday = now.toDateString() === weddingDate.toDateString();
       daysEl.textContent = '0';
       hoursEl.textContent = '0';
       minsEl.textContent = '0';
       secsEl.textContent = '0';
-      messageEl.textContent = '결혼식 당일입니다';
+      messageEl.textContent = isToday ? '결혼식 당일입니다 🎊' : '행복한 결혼생활 중입니다 💕';
       return;
     }
 

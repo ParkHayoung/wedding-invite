@@ -15,7 +15,7 @@
     <div class="music-overlay__inner">
       <p class="music-overlay__deco">🤵🏻 ✦ 👰🏻‍♀️</p>
       <p class="music-overlay__subtitle">We're getting married</p>
-      <h2 class="music-overlay__names">문승현 &amp; 박하영</h2>
+      <h2 class="music-overlay__names">문승현 ❤️ 박하영</h2>
       <p class="music-overlay__date">2026. 09. 12. SAT</p>
       <p class="music-overlay__hint">터치하여 청첩장 열기</p>
     </div>

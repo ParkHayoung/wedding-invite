@@ -10,6 +10,28 @@
   margin-bottom: 40px;
 }
 
+.greeting__divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 160px;
+  margin: 0 auto 28px;
+}
+
+.greeting__divider::before,
+.greeting__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #d4c5b5;
+}
+
+.greeting__divider span {
+  color: #c4a882;
+  font-size: 0.55rem;
+  line-height: 1;
+}
+
 .greeting__parents {
   font-size: 0.875rem;
   color: #7a7a7a;

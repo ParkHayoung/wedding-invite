@@ -64,6 +64,46 @@
   border-top: 1px solid #e8e4de;
 }
 
+#hero + #greeting {
+  border-top: none;
+}
+
+.divider--short {
+  width: 40px;
+  height: 1px;
+  background: #d4c5b5;
+  border: none;
+  margin: 0 auto 28px;
+}
+
+.section-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  border-top: none;
+}
+
+.section-divider span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid #c9c2b6;
+  display: inline-block;
+}
+
+.section-divider span:nth-child(2) {
+  width: 4px;
+  height: 4px;
+  opacity: 0.6;
+}
+
+.section + .section-divider,
+.section-divider + .section {
+  border-top: none;
+}
+
 /* Toast notification */
 .toast {
   position: fixed;

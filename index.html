@@ -6,7 +6,7 @@
   <title>결혼합니다</title>
 
   <!-- OG Tags for 카카오톡 공유 -->
-  <meta property="og:title" content="○○ ♥ ○○ 결혼합니다">
+  <meta property="og:title" content="승현 ♥ 하영 결혼합니다">
   <meta property="og:description" content="2026년 9월 12일 토요일 오후 4시 50분">
   <meta property="og:type" content="website">
 
@@ -37,26 +37,31 @@
   <section id="hero" class="section hero">
     <p class="hero__label fade-up">Wedding Invitation</p>
     <h1 class="hero__names fade-up">
-      <span class="hero__groom">신랑이름</span>
+      <span class="hero__groom">문승현</span>
       <span class="hero__amp">&amp;</span>
-      <span class="hero__bride">신부이름</span>
+      <span class="hero__bride">박하영</span>
     </h1>
     <p class="hero__date fade-up">2026. 09. 12. SAT PM 4:50</p>
-    <p class="hero__venue fade-up">더파티움 안양</p>
+    <p class="hero__venue fade-up">더파티움 안양 5F 브리엘홀</p>
   </section>
 
   <!-- 2. 인사말 -->
   <section id="greeting" class="section greeting">
+    <div class="greeting__divider fade-up"><span>✦</span></div>
     <h2 class="section__title fade-up">초대합니다</h2>
     <p class="greeting__text fade-up">
-      서로 다른 길을 걸어온 두 사람이<br>
-      이제 같은 길을 함께 걸어가려 합니다.<br><br>
-      귀한 걸음 하시어<br>
-      축복해 주시면 감사하겠습니다.
+      함께 있을 때 가장 나다운 모습이 되고<br>
+      함께 있을 때 미래를 꿈꾸게 하는 사람을 만나<br>
+      함께 맞는 4번째 가을, 결혼합니다.<br><br>
+      지금처럼 서로에게 가장 친한 친구가 되어<br>
+      예쁘고 행복하게 잘 살겠습니다.<br><br>
+      저희 두 사람의 새로운 시작을 함께하시어<br>
+      축복해 주시면 감사하겠습니다.<br>
     </p>
+    <hr class="divider--short fade-up">
     <div class="greeting__parents fade-up">
-      <p><span class="parent-name">신랑아버지</span> · <span class="parent-name">신랑어머니</span>의 아들 <strong>신랑이름</strong></p>
-      <p><span class="parent-name">신부아버지</span> · <span class="parent-name">신부어머니</span>의 딸 <strong>신부이름</strong></p>
+      <p><span class="parent-name">신랑아버지</span> · <span class="parent-name">신랑어머니</span>의 아들 <strong>문승현</strong></p>
+      <p><span class="parent-name">박상수</span> · <span class="parent-name">오미경</span>의 딸 <strong>박하영</strong></p>
     </div>
   </section>
 
@@ -83,44 +88,41 @@
     <span class="lightbox__counter"></span>
   </div>
 
+  <div class="section-divider">
+    <span></span><span></span><span></span>
+  </div>
+
   <!-- 4. 예식 정보 -->
   <section id="info" class="section info">
     <h2 class="section__title fade-up">예식 안내</h2>
     <div class="info__calendar fade-up" id="calendar"></div>
-    <div class="info__detail fade-up">
-      <p class="info__datetime">2026년 9월 12일 토요일 오후 4시 50분</p>
-      <p class="info__venue">더파티움 안양 5층 브리엘 홀</p>
+    <div class="info__dday fade-up">
+      <div class="dday__counter dday__counter--small">
+        <div class="dday__unit">
+          <span class="dday__number" id="dday-days">0</span>
+          <span class="dday__label">DAYS</span>
+        </div>
+        <span class="dday__separator">:</span>
+        <div class="dday__unit">
+          <span class="dday__number" id="dday-hours">0</span>
+          <span class="dday__label">HOURS</span>
+        </div>
+        <span class="dday__separator">:</span>
+        <div class="dday__unit">
+          <span class="dday__number" id="dday-mins">0</span>
+          <span class="dday__label">MINS</span>
+        </div>
+        <span class="dday__separator">:</span>
+        <div class="dday__unit">
+          <span class="dday__number" id="dday-secs">0</span>
+          <span class="dday__label">SECS</span>
+        </div>
+      </div>
+      <p class="dday__message" id="dday-message"></p>
     </div>
     <a class="btn btn--outline info__calendar-save fade-up" href="assets/wedding.ics" download="wedding.ics">
       🗓 캘린더에 저장
     </a>
-  </section>
-
-  <!-- D-Day 카운트다운 -->
-  <section id="dday" class="section dday">
-    <h2 class="section__title fade-up">D-Day</h2>
-    <div class="dday__counter fade-up">
-      <div class="dday__unit">
-        <span class="dday__number" id="dday-days">0</span>
-        <span class="dday__label">DAYS</span>
-      </div>
-      <span class="dday__separator">:</span>
-      <div class="dday__unit">
-        <span class="dday__number" id="dday-hours">0</span>
-        <span class="dday__label">HOURS</span>
-      </div>
-      <span class="dday__separator">:</span>
-      <div class="dday__unit">
-        <span class="dday__number" id="dday-mins">0</span>
-        <span class="dday__label">MINS</span>
-      </div>
-      <span class="dday__separator">:</span>
-      <div class="dday__unit">
-        <span class="dday__number" id="dday-secs">0</span>
-        <span class="dday__label">SECS</span>
-      </div>
-    </div>
-    <p class="dday__message fade-up" id="dday-message"></p>
   </section>
 
   <!-- 오시는 길 -->

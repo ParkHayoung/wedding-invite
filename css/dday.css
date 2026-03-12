@@ -42,3 +42,33 @@
   font-size: 0.875rem;
   color: #999;
 }
+
+/* info 섹션 내 소형 D-Day */
+.info__dday {
+  margin-top: 40px;
+  margin-bottom: 4px;
+}
+
+.info__dday .dday__message {
+  font-size: 0.75rem;
+  margin-top: 6px;
+  color: #bbb;
+}
+
+.dday__counter--small {
+  gap: 12px;
+}
+
+.dday__counter--small .dday__number {
+  font-size: 1.25rem;
+}
+
+.dday__counter--small .dday__separator {
+  font-size: 1rem;
+  padding-top: 2px;
+}
+
+.dday__counter--small .dday__label {
+  font-size: 0.5625rem;
+  margin-top: 4px;
+}
