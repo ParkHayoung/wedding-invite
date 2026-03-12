@@ -13,13 +13,13 @@
     var position = new kakao.maps.LatLng(C.lat, C.lng);
     var map = new kakao.maps.Map(mapContainer, {
       center: position,
-      level: 3
+      level: 4
     });
 
     var marker = new kakao.maps.Marker({ map: map, position: position });
 
     var infowindow = new kakao.maps.InfoWindow({
-      content: '<div style="padding:5px 10px;font-size:12px;white-space:nowrap;">' + C.mapName + '</div>'
+      content: '<div style="padding:5px 10px;font-size:12px;white-space:nowrap;">' + C.venue + '</div>'
     });
     infowindow.open(map, marker);
 
@@ -27,12 +27,37 @@
     map.setDraggable(false);
     map.setZoomable(false);
 
-    // 지도 클릭 시 확대/축소 토글
+    var toggleBtn = document.getElementById('mapToggle');
+    var iconLock = toggleBtn && toggleBtn.querySelector('.map-toggle__icon--lock');
+    var iconUnlock = toggleBtn && toggleBtn.querySelector('.map-toggle__icon--unlock');
+
+    function setMapActive(active) {
+      map.setDraggable(active);
+      map.setZoomable(active);
+      if (!toggleBtn) return;
+      if (active) {
+        toggleBtn.classList.add('is-active');
+        if (iconLock) iconLock.hidden = true;
+        if (iconUnlock) iconUnlock.hidden = false;
+      } else {
+        toggleBtn.classList.remove('is-active');
+        if (iconLock) iconLock.hidden = false;
+        if (iconUnlock) iconUnlock.hidden = true;
+      }
+    }
+
+    // 지도 클릭 시 토글
     kakao.maps.event.addListener(map, 'click', function () {
-      var draggable = map.getDraggable();
-      map.setDraggable(!draggable);
-      map.setZoomable(!draggable);
+      setMapActive(!map.getDraggable());
     });
+
+    // 버튼 클릭 시 토글
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setMapActive(!map.getDraggable());
+      });
+    }
   }
 
   if (window.kakao && kakao.maps) {

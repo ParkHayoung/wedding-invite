@@ -41,8 +41,25 @@
   var locationAddress = document.getElementById('location-address');
   if (locationAddress) {
     locationAddress.innerHTML =
-      '<p>' + C.address + '</p>' +
-      '<button class="btn btn--copy" data-copy="' + C.address + '">주소 복사</button>';
+      '<div class="location__info-card">' +
+        '<div class="location__pin">' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">' +
+            '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>' +
+            '<circle cx="12" cy="10" r="3"/>' +
+          '</svg>' +
+        '</div>' +
+        '<div class="location__info-text">' +
+          '<p class="location__venue-name">' + C.venue + '</p>' +
+          '<p class="location__address-text">' + C.address + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<button class="btn btn--copy location__copy-btn" data-copy="' + C.address + '">' +
+        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+          '<rect x="9" y="9" width="13" height="13" rx="2"/>' +
+          '<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>' +
+        '</svg>' +
+        '주소 복사' +
+      '</button>';
   }
 
   /* ─── 계좌 섹션 ──────────────────────────────── */
