@@ -79,6 +79,14 @@
   letter-spacing: 0.15em;
 }
 
+.music-overlay__venue {
+  font-family: 'Gowun Batang', serif;
+  font-size: 0.88rem;
+  color: #7a7269;
+  letter-spacing: 0.15em;
+  margin-top: -6px;
+}
+
 .music-overlay__hint {
   margin-top: 20px;
   font-family: 'Gowun Batang', serif;
