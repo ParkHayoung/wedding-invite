@@ -2,51 +2,111 @@
   text-align: center;
 }
 
+/* ── 그룹 컨테이너 ── */
 .contact__group {
-  margin-bottom: 32px;
+  background: #fff;
+  border: 1px solid #e8e3db;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
 }
 
 .contact__group:last-child {
   margin-bottom: 0;
 }
 
-.contact__label {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: #5a5a5a;
-  letter-spacing: 0.05em;
-  margin-bottom: 16px;
-}
-
-.contact__row {
+/* ── 그룹 헤더 (신랑측 / 신부측) ── */
+.contact__group-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 8px;
+  padding: 14px 20px;
+  background: #f7f4f0;
+  border-bottom: 1px solid #e8e3db;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #5a5a5a;
+  letter-spacing: 0.08em;
 }
 
-.contact__name {
+.contact__group-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ── 각 인원 행 ── */
+.contact__row {
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: flex-end;
-  width: 120px;
-  gap: 4px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0ece6;
+}
+
+.contact__row:last-child {
+  border-bottom: none;
+}
+
+/* ── 이름 + 역할 ── */
+.contact__info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .contact__role {
-  font-size: 0.8125rem;
-  color: #aaa;
-  letter-spacing: 0.03em;
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #9b8b7a;
+  background: #f0ece6;
+  border-radius: 20px;
+  padding: 3px 9px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  min-width: 44px;
+  text-align: center;
 }
 
 .contact__person {
-  font-size: 1.0625rem;
-  color: #5a5a5a;
+  font-size: 1rem;
+  color: #3a3a3a;
+  font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
+/* ── 버튼 묶음 ── */
 .contact__btns {
   display: flex;
   gap: 8px;
+}
+
+.contact__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 1px solid #e0d8ce;
+  background: #faf8f5;
+  color: #5a5a5a;
+  transition: background 0.15s, border-color 0.15s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contact__btn:active {
+  background: #f0ece6;
+  border-color: #c9c0b4;
+}
+
+.contact__btn svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
 }
