@@ -46,3 +46,15 @@
 .parent-name {
   font-weight: 400;
 }
+
+.parents-grid {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 0.25em;
+  row-gap: 0.15em;
+  text-align: left;
+}
+
+.parents-grid__rel {
+  text-align: center;
+}

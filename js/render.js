@@ -33,8 +33,16 @@
     var bF = C.brideFather.name || '○○○';
     var bM = C.brideMother.name || '○○○';
     parents.innerHTML =
-      '<p><span class="parent-name">' + gF + '</span> · <span class="parent-name">' + gM + '</span>의 아들 <strong>' + C.groom.name + '</strong></p>' +
-      '<p><span class="parent-name">' + bF + '</span> · <span class="parent-name">' + bM + '</span>의 딸 <strong>' + C.bride.name + '</strong></p>';
+      '<div class="parents-grid">' +
+        '<span><span class="parent-name">' + gF + '</span> · <span class="parent-name">' + gM + '</span></span>' +
+        '<span class="parents-grid__ui">의</span>' +
+        '<span class="parents-grid__rel">아들</span>' +
+        '<strong>' + C.groom.name + '</strong>' +
+        '<span><span class="parent-name">' + bF + '</span> · <span class="parent-name">' + bM + '</span></span>' +
+        '<span class="parents-grid__ui">의</span>' +
+        '<span class="parents-grid__rel">딸</span>' +
+        '<strong>' + C.bride.name + '</strong>' +
+      '</div>';
   }
 
   /* ─── 오시는 길 주소 ─────────────────────────── */
