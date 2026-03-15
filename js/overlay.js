@@ -60,8 +60,6 @@
     // 오버레이 제거
     setTimeout(() => overlay.remove(), 1300);
 
-    // 음악 재생 신호
-    document.dispatchEvent(new CustomEvent('overlay:dismissed'));
   }
 
   overlay.addEventListener('click', dismiss);
