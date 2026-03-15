@@ -85,8 +85,7 @@
               (role ? '<span class="account__role">' + role + '</span>' : '') +
               '<span class="account__holder">' + item.holder + '</span>' +
             '</div>' +
-            '<span class="account__bank">' + item.bank + '</span>' +
-            '<span class="account__number">' + item.number + '</span>' +
+            '<span class="account__bank-number">' + item.bank + ' ' + item.number + '</span>' +
           '</div>' +
           '<button class="account__copy-btn" data-copy="' + item.number + '">' +
             copySvg + '복사' +
@@ -102,8 +101,9 @@
     }
 
     var noticeTxt =
-      '축하해 주시려는 분들을 위해 부득이하게 계좌번호를 안내드립니다.<br>' +
-      '참석해 주시는 것만으로도 충분히 감사합니다.';
+      '멀리서도 축하의 마음을 전해 주시려는 분들을 위해<br>' +
+      '부득이하게 계좌번호를 기재하오니<br>' +
+      '너그러이 이해해 주시면 감사하겠습니다.';
 
     var wrapper = document.createElement('div');
     wrapper.innerHTML =
