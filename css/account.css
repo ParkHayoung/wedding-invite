@@ -2,10 +2,23 @@
   text-align: center;
 }
 
+/* ── 양해 문구 ── */
+.account__notice {
+  font-size: 0.8125rem;
+  color: #9b8b7a;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  padding: 14px 18px;
+  background: #f7f4f0;
+  border-radius: 10px;
+  border: 1px solid #e8e3db;
+}
+
+/* ── 그룹 카드 ── */
 .account__group {
-  margin-bottom: 16px;
-  border: 1px solid #e8e4de;
-  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #e8e3db;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -13,6 +26,7 @@
   margin-bottom: 0;
 }
 
+/* ── 토글 헤더 ── */
 .account__toggle {
   width: 100%;
   display: flex;
@@ -20,46 +34,97 @@
   justify-content: space-between;
   padding: 16px 20px;
   font-size: 0.9375rem;
-  color: #5a5a5a;
-  background: #fff;
+  font-weight: 600;
+  color: #4a4a4a;
+  background: #f7f4f0;
   transition: background 0.2s;
+  letter-spacing: 0.03em;
 }
 
 .account__toggle:active {
-  background: #f8f7f4;
+  background: #f0ece6;
 }
 
 .account__arrow {
   transition: transform 0.3s ease;
+  color: #9b8b7a;
 }
 
 .account__toggle.open .account__arrow {
   transform: rotate(180deg);
 }
 
+/* ── 계좌 목록 ── */
 .account__list {
-  border-top: 1px solid #e8e4de;
-  background: #fdfcfa;
+  border-top: 1px solid #e8e3db;
+  background: #fff;
 }
 
+/* ── 개별 계좌 아이템 ── */
 .account__item {
-  padding: 20px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .account__item + .account__item {
-  border-top: 1px solid #f0ede8;
+  border-top: 1px solid #f0ece6;
 }
 
-.account__info {
-  font-size: 0.9375rem;
-  color: #3a3a3a;
-  margin-bottom: 4px;
+/* ── 계좌 정보 (왼쪽) ── */
+.account__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
 }
 
 .account__holder {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+}
+
+.account__bank {
   font-size: 0.8125rem;
-  color: #aaa;
-  margin-bottom: 12px;
+  color: #888;
+}
+
+.account__number {
+  font-size: 0.9375rem;
+  color: #3a3a3a;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ── 복사 버튼 ── */
+.account__copy-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid #e0d8ce;
+  background: #faf8f5;
+  color: #5a5a5a;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.account__copy-btn:active {
+  background: #f0ece6;
+  border-color: #c9c0b4;
+}
+
+.account__copy-btn svg {
+  width: 12px;
+  height: 12px;
 }
 
 /* Footer */

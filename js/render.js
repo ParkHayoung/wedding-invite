@@ -70,16 +70,26 @@
       'fill="none" stroke="currentColor" stroke-width="2">' +
       '<polyline points="6 9 12 15 18 9"/></svg>';
 
+    var copySvg =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+      '<rect x="9" y="9" width="13" height="13" rx="2"/>' +
+      '<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>' +
+      '</svg>';
+
     function buildAccountGroup(label, id, items) {
       var itemsHtml = items.map(function (item) {
-        var full = item.bank + ' ' + item.number;
         return '<div class="account__item">' +
-          '<p class="account__info">' + full + '</p>' +
-          '<p class="account__holder">예금주: ' + item.holder + '</p>' +
-          '<button class="btn btn--copy" data-copy="' + full + '">복사</button>' +
+          '<div class="account__meta">' +
+            '<span class="account__holder">' + item.holder + '</span>' +
+            '<span class="account__bank">' + item.bank + '</span>' +
+            '<span class="account__number">' + item.number + '</span>' +
+          '</div>' +
+          '<button class="account__copy-btn" data-copy="' + item.number + '">' +
+            copySvg + '복사' +
+          '</button>' +
           '</div>';
       }).join('');
-      return '<div class="account__group">' +
+      return '<div class="account__group fade-up">' +
         '<button class="account__toggle" data-target="' + id + '">' +
           label + ' ' + arrowSvg +
         '</button>' +
@@ -87,10 +97,15 @@
         '</div>';
     }
 
+    var noticeTxt =
+      '축하해 주시려는 분들을 위해 부득이하게 계좌번호를 안내드립니다.<br>' +
+      '참석해 주시는 것만으로도 충분히 감사합니다.';
+
     var wrapper = document.createElement('div');
     wrapper.innerHTML =
-      buildAccountGroup('신랑측 계좌번호', 'groom-accounts', C.accounts.groom) +
-      buildAccountGroup('신부측 계좌번호', 'bride-accounts', C.accounts.bride);
+      '<p class="account__notice">' + noticeTxt + '</p>' +
+      buildAccountGroup('🤵🏻 신랑측 계좌번호', 'groom-accounts', C.accounts.groom) +
+      buildAccountGroup('👰🏻‍♀️ 신부측 계좌번호', 'bride-accounts', C.accounts.bride);
 
     var title = account.querySelector('.section__title');
     title.insertAdjacentElement('afterend', wrapper);

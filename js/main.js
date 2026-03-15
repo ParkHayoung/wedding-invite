@@ -6,8 +6,9 @@
   document.querySelectorAll('[data-copy]').forEach((btn) => {
     btn.addEventListener('click', () => {
       const text = btn.dataset.copy;
+      const msg = btn.classList.contains('account__copy-btn') ? '계좌번호가 복사되었습니다' : '복사되었습니다';
       navigator.clipboard.writeText(text).then(() => {
-        showToast('복사되었습니다');
+        showToast(msg);
       }).catch(() => {
         // fallback for older browsers
         const textarea = document.createElement('textarea');
@@ -18,7 +19,7 @@
         textarea.select();
         document.execCommand('copy');
         document.body.removeChild(textarea);
-        showToast('복사되었습니다');
+        showToast(msg);
       });
     });
   });
