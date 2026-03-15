@@ -163,3 +163,126 @@
   color: #6a6a6a;
   letter-spacing: 0.02em;
 }
+
+/* 교통편 안내 */
+.location__transport {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  text-align: left;
+}
+
+.transport__item {
+  padding: 18px 4px;
+  border-bottom: 1px solid #ece9e3;
+}
+
+.transport__item:last-child {
+  border-bottom: none;
+}
+
+.transport__header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 7px;
+}
+
+.transport__icon {
+  font-size: 0.95rem;
+}
+
+.transport__title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #4a4540;
+  letter-spacing: 0.02em;
+}
+
+.transport__desc {
+  font-size: 0.78rem;
+  color: #777;
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+
+.transport__desc strong {
+  color: #4a4540;
+  font-weight: 600;
+}
+
+/* 버스 목록 */
+.transport__bus-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.transport__bus-list li {
+  font-size: 0.76rem;
+  color: #777;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.transport__bus-badge {
+  flex-shrink: 0;
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: #7a6e64;
+  background: #ede9e3;
+  border-radius: 4px;
+  padding: 1px 6px;
+  letter-spacing: 0.01em;
+}
+
+/* 주차장 목록 */
+.transport__parking-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.transport__parking-list li {
+  font-size: 0.76rem;
+  color: #777;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.transport__parking-badge {
+  align-self: flex-start;
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: #8b6a5a;
+  background: #f2e8e3;
+  border-radius: 4px;
+  padding: 1px 6px;
+  letter-spacing: 0.01em;
+}
+
+.transport__parking-list em {
+  font-style: normal;
+  color: #b07060;
+  font-weight: 500;
+}
+
+.transport__addr-label {
+  display: inline-block;
+  font-size: 0.63rem;
+  font-weight: 600;
+  color: #aaa;
+  letter-spacing: 0.02em;
+  margin-right: 4px;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.5px;
+}
