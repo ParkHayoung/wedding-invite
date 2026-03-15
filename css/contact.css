@@ -4,11 +4,7 @@
 
 /* ── 그룹 컨테이너 ── */
 .contact__group {
-  background: #fff;
-  border: 1px solid #e8e3db;
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 28px;
 }
 
 .contact__group:last-child {
@@ -19,19 +15,24 @@
 .contact__group-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 20px;
-  background: #f7f4f0;
-  border-bottom: 1px solid #e8e3db;
-  font-size: 0.875rem;
+  gap: 6px;
+  margin-bottom: 12px;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: #5a5a5a;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
+}
+
+.contact__group-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e8e3db;
+  margin-left: 4px;
 }
 
 .contact__group-icon {
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1;
 }
 
@@ -40,7 +41,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 20px;
+  padding: 12px 4px;
   border-bottom: 1px solid #f0ece6;
 }
 
@@ -58,15 +59,12 @@
 .contact__role {
   display: inline-block;
   font-size: 0.6875rem;
-  font-weight: 600;
-  color: #9b8b7a;
-  background: #f0ece6;
-  border-radius: 20px;
-  padding: 3px 9px;
+  font-weight: 500;
+  color: #b0a090;
   letter-spacing: 0.04em;
   white-space: nowrap;
-  width: 52px;
-  text-align: center;
+  width: 40px;
+  text-align: left;
 }
 
 .contact__person {
@@ -79,22 +77,22 @@
 /* ── 버튼 묶음 ── */
 .contact__btns {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .contact__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  padding: 7px 14px;
-  border-radius: 8px;
+  gap: 4px;
+  padding: 7px 12px;
+  border-radius: 50px;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.03em;
-  border: 1px solid #e0d8ce;
-  background: #faf8f5;
-  color: #5a5a5a;
+  border: 1px solid #ddd8d0;
+  background: transparent;
+  color: #6a6a6a;
   transition: background 0.15s, border-color 0.15s;
   text-decoration: none;
   white-space: nowrap;
@@ -106,7 +104,7 @@
 }
 
 .contact__btn svg {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   flex-shrink: 0;
 }

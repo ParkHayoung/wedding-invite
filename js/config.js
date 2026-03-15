@@ -34,8 +34,8 @@ const WEDDING_CONFIG = {
 
   /* ─── 신랑측 ──────────────────────────────────── */
   groom:       { name: '문승현', phone: '010-0000-0000' },
-  groomFather: { name: '',       phone: '010-0000-0000' },  // 이름 비우면 ○○○ 표시
-  groomMother: { name: '',       phone: '010-0000-0000' },  // 연락처 섹션은 숨김
+  groomFather: { name: '문영오',       phone: '010-0000-0000' },  // 이름 비우면 ○○○ 표시
+  groomMother: { name: '서경숙',       phone: '010-0000-0000' },  // 연락처 섹션은 숨김
 
   /* ─── 신부측 ──────────────────────────────────── */
   bride:       { name: '박하영', phone: '010-0000-0000' },
@@ -46,8 +46,8 @@ const WEDDING_CONFIG = {
   accounts: {
     groom: [
       { holder: '문승현',    bank: '신한은행', number: '110-000-000000' },
-      { holder: '신랑아버지', bank: '신한은행', number: '110-000-000000' },
-      { holder: '신랑어머니', bank: '신한은행', number: '110-000-000000' },
+      { holder: '문영오', bank: '신한은행', number: '110-000-000000' },
+      { holder: '서경숙', bank: '신한은행', number: '110-000-000000' },
     ],
     bride: [
       { holder: '박하영',    bank: '국민은행', number: '000-00-0000-000' },
