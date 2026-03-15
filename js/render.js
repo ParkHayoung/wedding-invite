@@ -76,11 +76,15 @@
       '<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>' +
       '</svg>';
 
-    function buildAccountGroup(label, id, items) {
-      var itemsHtml = items.map(function (item) {
+    function buildAccountGroup(label, id, items, roles) {
+      var itemsHtml = items.map(function (item, i) {
+        var role = roles[i] || '';
         return '<div class="account__item">' +
           '<div class="account__meta">' +
-            '<span class="account__holder">' + item.holder + '</span>' +
+            '<div class="account__name-row">' +
+              (role ? '<span class="account__role">' + role + '</span>' : '') +
+              '<span class="account__holder">' + item.holder + '</span>' +
+            '</div>' +
             '<span class="account__bank">' + item.bank + '</span>' +
             '<span class="account__number">' + item.number + '</span>' +
           '</div>' +
@@ -104,8 +108,8 @@
     var wrapper = document.createElement('div');
     wrapper.innerHTML =
       '<p class="account__notice">' + noticeTxt + '</p>' +
-      buildAccountGroup('🤵🏻 신랑측 계좌번호', 'groom-accounts', C.accounts.groom) +
-      buildAccountGroup('👰🏻‍♀️ 신부측 계좌번호', 'bride-accounts', C.accounts.bride);
+      buildAccountGroup('🤵🏻 신랑측 계좌번호', 'groom-accounts', C.accounts.groom, ['신랑', '아버지', '어머니']) +
+      buildAccountGroup('👰🏻‍♀️ 신부측 계좌번호', 'bride-accounts', C.accounts.bride, ['신부', '아버지', '어머니']);
 
     var title = account.querySelector('.section__title');
     title.insertAdjacentElement('afterend', wrapper);

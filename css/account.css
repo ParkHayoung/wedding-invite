@@ -81,6 +81,26 @@
   text-align: left;
 }
 
+.account__name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.account__role {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #9b8b7a;
+  background: #f0ece6;
+  border-radius: 20px;
+  padding: 3px 9px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  width: 52px;
+  text-align: center;
+}
+
 .account__holder {
   font-size: 1.0625rem;
   font-weight: 700;
