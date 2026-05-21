@@ -2,6 +2,19 @@
  * 갤러리 - 라이트박스 뷰어
  */
 (function () {
+  const grid = document.getElementById('galleryGrid');
+  if (grid && WEDDING_CONFIG.gallery && WEDDING_CONFIG.gallery.length) {
+    WEDDING_CONFIG.gallery.forEach((url, i) => {
+      const div = document.createElement('div');
+      div.className = 'gallery__item fade-up';
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = '웨딩 사진 ' + (i + 1);
+      div.appendChild(img);
+      grid.appendChild(div);
+    });
+  }
+
   const items = document.querySelectorAll('.gallery__item');
   if (!items.length) return;
 
