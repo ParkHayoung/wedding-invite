@@ -21,8 +21,12 @@
     WEDDING_CONFIG.brideFather.phone = d.brideFatherPhone || '';
     WEDDING_CONFIG.brideMother.phone = d.brideMotherPhone || '';
 
-    WEDDING_CONFIG.accounts.groom = JSON.parse(d.groomAccounts || '[]');
-    WEDDING_CONFIG.accounts.bride = JSON.parse(d.brideAccounts || '[]');
+    try {
+      WEDDING_CONFIG.accounts.groom = JSON.parse(d.groomAccounts || '[]');
+      WEDDING_CONFIG.accounts.bride = JSON.parse(d.brideAccounts || '[]');
+    } catch (e) {
+      console.error('계좌 JSON 파싱 실패:', e);
+    }
 
     renderContact();
     renderAccount();
@@ -32,5 +36,7 @@
     });
   }).catch(function (err) {
     console.error('Firestore 로드 실패:', err);
+    renderContact();
+    renderAccount();
   });
 })();
