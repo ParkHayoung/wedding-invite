@@ -43,28 +43,7 @@ const WEDDING_CONFIG = {
   brideMother: { name: '오미경', phone: '' },
 
   /* ─── 갤러리 이미지 ──────────────────────────── */
-  gallery: [
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/01.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/02.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/03.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/04.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/05.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/06.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/07.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/08.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/09.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/10.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/11.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/12.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/13.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/14.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/15.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/16.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/17.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/18.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/19.jpg?alt=media',
-    'https://firebasestorage.googleapis.com/v0/b/wedding-invite-ea127.firebasestorage.app/o/20.jpg?alt=media',
-  ],
+  gallery: [],
 
   /* ─── 계좌 정보 ───────────────────────────────── */
   accounts: {

@@ -28,8 +28,15 @@
       console.error('계좌 JSON 파싱 실패:', e);
     }
 
+    try {
+      WEDDING_CONFIG.gallery = JSON.parse(d.galleryUrls || '[]');
+    } catch (e) {
+      console.error('갤러리 JSON 파싱 실패:', e);
+    }
+
     renderContact();
     renderAccount();
+    renderGallery();
 
     if (window.observeFadeUp) {
       var contact = document.getElementById('contact');
@@ -41,5 +48,6 @@
     console.error('Firestore 로드 실패:', err);
     renderContact();
     renderAccount();
+    renderGallery();
   });
 })();
