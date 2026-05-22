@@ -121,6 +121,7 @@
   transition: all 0.3s ease;
   z-index: 1000;
   pointer-events: none;
+  white-space: nowrap;
 }
 
 .toast.show {
