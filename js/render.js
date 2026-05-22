@@ -107,7 +107,7 @@ function renderAccount() {
         '<button class="account__toggle" data-target="' + id + '">' +
           label + ' ' + arrowSvg +
         '</button>' +
-        '<div class="account__list" id="' + id + '" hidden>' + itemsHtml + '</div>' +
+        '<div class="account__list" id="' + id + '">' + itemsHtml + '</div>' +
         '</div>';
     }
 
@@ -128,8 +128,8 @@ function renderAccount() {
     wrapper.querySelectorAll('.account__toggle').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var target = document.getElementById(btn.dataset.target);
-        var isOpen = !target.hidden;
-        target.hidden = isOpen;
+        var isOpen = target.classList.contains('account__list--open');
+        target.classList.toggle('account__list--open', !isOpen);
         btn.classList.toggle('open', !isOpen);
       });
     });

@@ -56,8 +56,13 @@
 
 /* ── 계좌 목록 ── */
 .account__list {
+  display: none;
   border-top: 1px solid #e8e3db;
   background: #fff;
+}
+
+.account__list--open {
+  display: block;
 }
 
 /* ── 개별 계좌 아이템 ── */
