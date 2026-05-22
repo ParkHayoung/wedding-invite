@@ -2,9 +2,6 @@
  * 스크롤 애니메이션 - Intersection Observer
  */
 (function () {
-  const targets = document.querySelectorAll('.fade-up');
-  if (!targets.length) return;
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -17,5 +14,9 @@
     { threshold: 0.15 }
   );
 
-  targets.forEach((el) => observer.observe(el));
+  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+  window.observeFadeUp = function (root) {
+    (root || document).querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+  };
 })();

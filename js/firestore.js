@@ -31,14 +31,12 @@
     renderContact();
     renderAccount();
 
-    ['contact', 'account'].forEach(function (id) {
-      var section = document.getElementById(id);
-      if (section) {
-        section.querySelectorAll('.fade-up').forEach(function (el) {
-          el.classList.add('visible');
-        });
-      }
-    });
+    if (window.observeFadeUp) {
+      var contact = document.getElementById('contact');
+      var account = document.getElementById('account');
+      if (contact) window.observeFadeUp(contact);
+      if (account) window.observeFadeUp(account);
+    }
   }).catch(function (err) {
     console.error('Firestore 로드 실패:', err);
     renderContact();
