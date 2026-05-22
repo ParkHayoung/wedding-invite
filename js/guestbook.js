@@ -23,8 +23,10 @@
       '<p class="guestbook__message">' + data.message.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>' +
       '<div class="guestbook__delete-form">' +
         '<input type="password" placeholder="비밀번호" maxlength="9">' +
-        '<button class="guestbook__delete-confirm" type="button">확인</button>' +
-        '<button class="guestbook__delete-cancel" type="button">취소</button>' +
+        '<div class="guestbook__delete-btns">' +
+          '<button class="guestbook__delete-confirm" type="button">확인</button>' +
+          '<button class="guestbook__delete-cancel" type="button">취소</button>' +
+        '</div>' +
       '</div>';
 
     var deleteBtn = el.querySelector('.guestbook__delete-btn');

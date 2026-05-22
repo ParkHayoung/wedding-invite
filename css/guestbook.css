@@ -124,7 +124,7 @@
 /* ── 삭제 확인 폼 ── */
 .guestbook__delete-form {
   display: none;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
   margin-top: 12px;
   padding-top: 12px;
@@ -136,29 +136,36 @@
 }
 
 .guestbook__delete-form input {
-  flex: 1;
-  padding: 8px 12px;
+  width: 100%;
+  padding: 10px 12px;
   border: 1px solid #e8e3db;
   border-radius: 8px;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-family: inherit;
   background: #fff;
   outline: none;
+  box-sizing: border-box;
+}
+
+.guestbook__delete-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 
 .guestbook__delete-confirm {
-  padding: 8px 14px;
+  padding: 10px;
   border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
   background: #e06060;
   color: #fff;
 }
 
 .guestbook__delete-cancel {
-  padding: 8px 14px;
+  padding: 10px;
   border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: #9b8b7a;
   border: 1px solid #e8e3db;
   background: #fff;
