@@ -22,7 +22,7 @@
       '</div>' +
       '<p class="guestbook__message">' + data.message.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>' +
       '<div class="guestbook__delete-form">' +
-        '<input type="password" placeholder="비밀번호" maxlength="4" inputmode="numeric" pattern="[0-9]*">' +
+        '<input type="password" placeholder="비밀번호" maxlength="9">' +
         '<button class="guestbook__delete-confirm" type="button">확인</button>' +
         '<button class="guestbook__delete-cancel" type="button">취소</button>' +
       '</div>';
@@ -85,8 +85,8 @@
       alert('모든 항목을 입력해주세요');
       return;
     }
-    if (!/^\d{4}$/.test(password)) {
-      alert('비밀번호는 숫자 4자리로 입력해주세요');
+    if (password.length < 4 || password.length > 9) {
+      alert('비밀번호는 4~9자리로 입력해주세요');
       return;
     }
 
