@@ -126,12 +126,12 @@ function renderAccount() {
     title.insertAdjacentElement('afterend', wrapper);
 
     wrapper.querySelectorAll('.account__toggle').forEach(function (btn) {
-      btn.addEventListener('click', function () {
+      btn.onclick = function () {
         var target = document.getElementById(btn.dataset.target);
         var isOpen = target.classList.contains('account__list--open');
         target.classList.toggle('account__list--open', !isOpen);
         btn.classList.toggle('open', !isOpen);
-      });
+      };
     });
   }
 }

@@ -31,8 +31,13 @@
     renderContact();
     renderAccount();
 
-    document.querySelectorAll('.fade-up:not(.visible)').forEach(function (el) {
-      el.classList.add('visible');
+    ['contact', 'account'].forEach(function (id) {
+      var section = document.getElementById(id);
+      if (section) {
+        section.querySelectorAll('.fade-up').forEach(function (el) {
+          el.classList.add('visible');
+        });
+      }
     });
   }).catch(function (err) {
     console.error('Firestore 로드 실패:', err);
