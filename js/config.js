@@ -33,14 +33,14 @@ const WEDDING_CONFIG = {
   ].join('<br>'),
 
   /* ─── 신랑측 ──────────────────────────────────── */
-  groom:       { name: '문승현', phone: '010-0000-0000' },
-  groomFather: { name: '문영오',       phone: '010-0000-0000' },  // 이름 비우면 ○○○ 표시
-  groomMother: { name: '서경숙',       phone: '010-0000-0000' },  // 연락처 섹션은 숨김
+  groom:       { name: '문승현', phone: '' },
+  groomFather: { name: '문영오', phone: '' },
+  groomMother: { name: '서경숙', phone: '' },
 
   /* ─── 신부측 ──────────────────────────────────── */
-  bride:       { name: '박하영', phone: '010-0000-0000' },
-  brideFather: { name: '박상수', phone: '010-0000-0000' },
-  brideMother: { name: '오미경', phone: '010-0000-0000' },
+  bride:       { name: '박하영', phone: '' },
+  brideFather: { name: '박상수', phone: '' },
+  brideMother: { name: '오미경', phone: '' },
 
   /* ─── 갤러리 이미지 ──────────────────────────── */
   gallery: [
@@ -68,16 +68,8 @@ const WEDDING_CONFIG = {
 
   /* ─── 계좌 정보 ───────────────────────────────── */
   accounts: {
-    groom: [
-      { holder: '문승현',    bank: '신한은행', number: '110-000-000000' },
-      { holder: '문영오', bank: '신한은행', number: '110-000-000000' },
-      { holder: '서경숙', bank: '신한은행', number: '110-000-000000' },
-    ],
-    bride: [
-      { holder: '박하영',    bank: '국민은행', number: '000-00-0000-000' },
-      { holder: '박상수',    bank: '국민은행', number: '000-00-0000-000' },
-      { holder: '오미경',    bank: '국민은행', number: '000-00-0000-000' },
-    ],
+    groom: [],
+    bride: [],
   },
 
 };

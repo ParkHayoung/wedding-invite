@@ -70,7 +70,10 @@
       '</button>';
   }
 
-  /* ─── 계좌 섹션 ──────────────────────────────── */
+})();
+
+function renderAccount() {
+  var C = WEDDING_CONFIG;
   var account = document.getElementById('account');
   if (account) {
     var arrowSvg =
@@ -122,5 +125,4 @@
     var title = account.querySelector('.section__title');
     title.insertAdjacentElement('afterend', wrapper);
   }
-
-})();
+}
