@@ -124,5 +124,14 @@ function renderAccount() {
 
     var title = account.querySelector('.section__title');
     title.insertAdjacentElement('afterend', wrapper);
+
+    wrapper.querySelectorAll('.account__toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = document.getElementById(btn.dataset.target);
+        var isOpen = !target.hidden;
+        target.hidden = isOpen;
+        btn.classList.toggle('open', !isOpen);
+      });
+    });
   }
 }
