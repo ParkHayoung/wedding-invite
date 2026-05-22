@@ -27,7 +27,7 @@
   border: 1px solid #ddd8d0;
   border-radius: 20px;
   font-size: 0.72rem;
-  color: #666;
+  color: #2a2a2a;
   cursor: pointer;
   backdrop-filter: blur(4px);
   transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -100,7 +100,7 @@
   justify-content: center;
   margin-bottom: 28px;
   font-size: 0.8rem;
-  color: #6a6a6a;
+  color: #2a2a2a;
   border: 1px solid #d4cdc5;
   background: #fff;
   padding: 10px;
@@ -160,7 +160,7 @@
 
 .location__link-label {
   font-size: 0.72rem;
-  color: #6a6a6a;
+  color: #2a2a2a;
   letter-spacing: 0.02em;
 }
 
