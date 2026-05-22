@@ -17,18 +17,15 @@ function renderGallery() {
   });
 
   if (window.observeFadeUp) window.observeFadeUp(grid);
-}
-
-(function () {
-  const items = document.querySelectorAll('.gallery__item');
-  if (!items.length) return;
 
   const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+
   const lightboxImg = lightbox.querySelector('.lightbox__img');
   const counter = lightbox.querySelector('.lightbox__counter');
-  let currentIndex = 0;
-
+  const items = grid.querySelectorAll('.gallery__item');
   const images = Array.from(items).map(item => item.querySelector('img').src);
+  let currentIndex = 0;
 
   function open(index) {
     currentIndex = index;
@@ -57,28 +54,18 @@ function renderGallery() {
     update();
   }
 
-  items.forEach((item, i) => {
-    item.addEventListener('click', () => open(i));
-  });
+  items.forEach((item, i) => item.addEventListener('click', () => open(i)));
 
   lightbox.querySelector('.lightbox__close').addEventListener('click', close);
   lightbox.querySelector('.lightbox__nav--prev').addEventListener('click', prev);
   lightbox.querySelector('.lightbox__nav--next').addEventListener('click', next);
 
-  // 배경 클릭으로 닫기
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) close();
-  });
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
 
-  // 스와이프
   let touchStartX = 0;
-  lightbox.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-  });
+  lightbox.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
   lightbox.addEventListener('touchend', (e) => {
     const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) {
-      diff > 0 ? next() : prev();
-    }
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
   });
-})();
+}
