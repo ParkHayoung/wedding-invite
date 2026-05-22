@@ -6,12 +6,15 @@ function renderGallery() {
   if (!grid || !WEDDING_CONFIG.gallery || !WEDDING_CONFIG.gallery.length) return;
 
   grid.innerHTML = '';
-  WEDDING_CONFIG.gallery.forEach((url, i) => {
+  WEDDING_CONFIG.gallery.forEach((item, i) => {
+    const url = typeof item === 'string' ? item : item.url;
+    const position = typeof item === 'object' && item.position ? item.position : 'center';
     const div = document.createElement('div');
     div.className = 'gallery__item fade-up';
     const img = document.createElement('img');
     img.src = url;
     img.alt = '웨딩 사진 ' + (i + 1);
+    img.style.objectPosition = position;
     div.appendChild(img);
     grid.appendChild(div);
   });
