@@ -194,9 +194,22 @@
     <h2 class="section__title fade-up">연락하기</h2>
   </section>
 
-  <!-- 6. 축의금 계좌 안내 — render.js 에서 동적 렌더링 -->
+  <!-- 6. 축의금 계좌 안내 -->
   <section id="account" class="section account">
     <h2 class="section__title fade-up">마음 전하실 곳</h2>
+    <p class="account__notice fade-up">
+      멀리서도 축하의 마음을 전해 주시려는 분들을 위해<br>
+      부득이하게 계좌번호를 기재하오니<br>
+      너그러이 이해해 주시면 감사하겠습니다.
+    </p>
+    <div class="account__group fade-up">
+      <button class="account__toggle" type="button" onclick="toggleAccount('groom-accounts', this)">🤵🏻 신랑측 계좌번호 <svg class="account__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="account__list" id="groom-accounts"></div>
+    </div>
+    <div class="account__group fade-up">
+      <button class="account__toggle" type="button" onclick="toggleAccount('bride-accounts', this)">👰🏻‍♀️ 신부측 계좌번호 <svg class="account__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="account__list" id="bride-accounts"></div>
+    </div>
   </section>
 
   <!-- Footer -->

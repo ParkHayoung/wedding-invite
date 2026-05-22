@@ -1,6 +1,14 @@
 /**
  * 모바일 청첩장 메인 스크립트
  */
+function toggleAccount(id, btn) {
+  var target = document.getElementById(id);
+  if (!target) return;
+  var isOpen = target.classList.contains('account__list--open');
+  target.classList.toggle('account__list--open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+}
+
 (function () {
   // 주소/계좌 복사 (이벤트 위임)
   document.addEventListener('click', (e) => {

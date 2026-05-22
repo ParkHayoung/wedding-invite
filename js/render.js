@@ -74,64 +74,33 @@
 
 function renderAccount() {
   var C = WEDDING_CONFIG;
-  var account = document.getElementById('account');
-  if (account) {
-    var arrowSvg =
-      '<svg class="account__arrow" width="16" height="16" viewBox="0 0 24 24" ' +
-      'fill="none" stroke="currentColor" stroke-width="2">' +
-      '<polyline points="6 9 12 15 18 9"/></svg>';
 
-    var copySvg =
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
-      '<rect x="9" y="9" width="13" height="13" rx="2"/>' +
-      '<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>' +
-      '</svg>';
+  var copySvg =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+    '<rect x="9" y="9" width="13" height="13" rx="2"/>' +
+    '<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>' +
+    '</svg>';
 
-    function buildAccountGroup(label, id, items, roles) {
-      var itemsHtml = items.map(function (item, i) {
-        var role = roles[i] || '';
-        return '<div class="account__item">' +
-          '<div class="account__meta">' +
-            '<div class="account__name-row">' +
-              (role ? '<span class="account__role">' + role + '</span>' : '') +
-              '<span class="account__holder">' + item.holder + '</span>' +
-            '</div>' +
-            '<span class="account__bank-number">' + item.bank + ' ' + item.number + '</span>' +
+  function buildItems(items, roles) {
+    return items.map(function (item, i) {
+      var role = roles[i] || '';
+      return '<div class="account__item">' +
+        '<div class="account__meta">' +
+          '<div class="account__name-row">' +
+            (role ? '<span class="account__role">' + role + '</span>' : '') +
+            '<span class="account__holder">' + item.holder + '</span>' +
           '</div>' +
-          '<button class="account__copy-btn" data-copy="' + item.number + '">' +
-            copySvg + '복사' +
-          '</button>' +
-          '</div>';
-      }).join('');
-      return '<div class="account__group fade-up">' +
-        '<button class="account__toggle" data-target="' + id + '">' +
-          label + ' ' + arrowSvg +
+          '<span class="account__bank-number">' + item.bank + ' ' + item.number + '</span>' +
+        '</div>' +
+        '<button class="account__copy-btn" data-copy="' + item.number + '">' +
+          copySvg + '복사' +
         '</button>' +
-        '<div class="account__list" id="' + id + '">' + itemsHtml + '</div>' +
-        '</div>';
-    }
-
-    var noticeTxt =
-      '멀리서도 축하의 마음을 전해 주시려는 분들을 위해<br>' +
-      '부득이하게 계좌번호를 기재하오니<br>' +
-      '너그러이 이해해 주시면 감사하겠습니다.';
-
-    var wrapper = document.createElement('div');
-    wrapper.innerHTML =
-      '<p class="account__notice">' + noticeTxt + '</p>' +
-      buildAccountGroup('🤵🏻 신랑측 계좌번호', 'groom-accounts', C.accounts.groom, ['신랑', '아버지', '어머니']) +
-      buildAccountGroup('👰🏻‍♀️ 신부측 계좌번호', 'bride-accounts', C.accounts.bride, ['신부', '아버지', '어머니']);
-
-    var title = account.querySelector('.section__title');
-    title.insertAdjacentElement('afterend', wrapper);
-
-    wrapper.querySelectorAll('.account__toggle').forEach(function (btn) {
-      btn.onclick = function () {
-        var target = document.getElementById(btn.dataset.target);
-        var isOpen = target.classList.contains('account__list--open');
-        target.classList.toggle('account__list--open', !isOpen);
-        btn.classList.toggle('open', !isOpen);
-      };
-    });
+      '</div>';
+    }).join('');
   }
+
+  var groomList = document.getElementById('groom-accounts');
+  var brideList = document.getElementById('bride-accounts');
+  if (groomList) groomList.innerHTML = buildItems(C.accounts.groom, ['신랑', '아버지', '어머니']);
+  if (brideList) brideList.innerHTML = buildItems(C.accounts.bride, ['신부', '아버지', '어머니']);
 }
