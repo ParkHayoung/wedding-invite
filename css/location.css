@@ -292,3 +292,43 @@
   position: relative;
   top: -0.5px;
 }
+
+/* 오시는 길 플로팅 버튼 */
+.floating-location {
+  position: fixed;
+  right: 18px;
+  bottom: 24px;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 18px;
+  background: rgba(90, 80, 70, 0.92);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.floating-location.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.floating-location__icon {
+  font-size: 1rem;
+  animation: floating-location-bob 2s ease-in-out infinite;
+}
+
+@keyframes floating-location-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
