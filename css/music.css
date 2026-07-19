@@ -51,15 +51,15 @@
 }
 
 .music-overlay__deco {
-  font-size: 1rem;
-  color: #b5a898;
+  font-size: 1.125rem;
+  color: #a8967f;
   letter-spacing: 0.3em;
 }
 
 .music-overlay__subtitle {
   font-family: 'Gowun Batang', serif;
-  font-size: 0.8rem;
-  color: #b5a898;
+  font-size: 1rem;
+  color: #8a7d6d;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -74,15 +74,15 @@
 
 .music-overlay__date {
   font-family: 'Gowun Batang', serif;
-  font-size: 0.88rem;
-  color: #7a7269;
+  font-size: 1.0625rem;
+  color: #4a4540;
   letter-spacing: 0.15em;
 }
 
 .music-overlay__venue {
   font-family: 'Gowun Batang', serif;
-  font-size: 0.88rem;
-  color: #7a7269;
+  font-size: 1.0625rem;
+  color: #4a4540;
   letter-spacing: 0.15em;
   margin-top: -6px;
 }
@@ -90,8 +90,8 @@
 .music-overlay__hint {
   margin-top: 20px;
   font-family: 'Gowun Batang', serif;
-  font-size: 0.78rem;
-  color: #b5a898;
+  font-size: 0.9375rem;
+  color: #8a7d6d;
   letter-spacing: 0.1em;
   animation: hint-pulse 1.6s ease-in-out infinite alternate;
 }

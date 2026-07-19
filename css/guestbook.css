@@ -22,7 +22,7 @@
   padding: 12px 14px;
   border: 1px solid #e8e3db;
   border-radius: 10px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: inherit;
   color: #1a1a1a;
   background: #faf8f5;
@@ -47,7 +47,7 @@
   background: #4a4a4a;
   color: #fff;
   border-radius: 10px;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.03em;
   transition: background 0.2s;
@@ -68,7 +68,7 @@
 .guestbook__empty {
   text-align: center;
   color: #b0a090;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   padding: 24px 0;
 }
 
@@ -88,19 +88,19 @@
 }
 
 .guestbook__name {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #1a1a1a;
   flex: 1;
 }
 
 .guestbook__date {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: #b0a090;
 }
 
 .guestbook__delete-btn {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: #c0b0a0;
   padding: 3px 8px;
   border: 1px solid #e8e3db;
@@ -114,7 +114,7 @@
 }
 
 .guestbook__message {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #3a3a3a;
   line-height: 1.7;
   white-space: pre-wrap;
@@ -140,7 +140,7 @@
   padding: 10px 12px;
   border: 1px solid #e8e3db;
   border-radius: 8px;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-family: inherit;
   background: #fff;
   outline: none;
@@ -156,7 +156,7 @@
 .guestbook__delete-confirm {
   padding: 10px;
   border-radius: 8px;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   background: #e06060;
   color: #fff;
@@ -165,7 +165,7 @@
 .guestbook__delete-cancel {
   padding: 10px;
   border-radius: 8px;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   color: #9b8b7a;
   border: 1px solid #e8e3db;
   background: #fff;

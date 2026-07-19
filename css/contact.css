@@ -17,7 +17,7 @@
   align-items: center;
   gap: 6px;
   margin-bottom: 12px;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #5a5a5a;
   letter-spacing: 0.05em;
@@ -58,7 +58,7 @@
 
 .contact__role {
   display: inline-block;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: #b0a090;
   letter-spacing: 0.04em;
@@ -68,7 +68,7 @@
 }
 
 .contact__person {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: #3a3a3a;
   font-weight: 500;
   letter-spacing: 0.03em;
@@ -87,7 +87,7 @@
   gap: 4px;
   padding: 7px 12px;
   border-radius: 50px;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.03em;
   border: 1px solid #ddd8d0;

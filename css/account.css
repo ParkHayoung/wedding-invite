@@ -4,7 +4,7 @@
 
 /* ── 양해 문구 ── */
 .account__notice {
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: #9b8b7a;
   line-height: 1.7;
   margin-bottom: 24px;
@@ -33,7 +33,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #4a4a4a;
   background: #f7f4f0;
@@ -96,7 +96,7 @@
 
 .account__role {
   display: inline-block;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #9b8b7a;
   background: #f0ece6;
@@ -109,14 +109,14 @@
 }
 
 .account__holder {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: #1a1a1a;
   letter-spacing: 0.02em;
 }
 
 .account__bank-number {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #5a5a5a;
   letter-spacing: 0.03em;
 }
@@ -129,7 +129,7 @@
   gap: 5px;
   padding: 8px 14px;
   border-radius: 8px;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   border: 1px solid #e0d8ce;
   background: #faf8f5;

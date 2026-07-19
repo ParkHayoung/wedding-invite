@@ -3,7 +3,7 @@
 }
 
 .greeting__text {
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
   font-weight: 200;
   line-height: 2;
   color: #2a2a2a;
@@ -33,7 +33,7 @@
 }
 
 .greeting__parents {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #7a7a7a;
   line-height: 2;
 }

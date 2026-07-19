@@ -14,7 +14,7 @@
 }
 
 .calendar__header {
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: 0.05em;
   color: #2a2a2a;
@@ -23,9 +23,9 @@
 }
 
 .calendar th {
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   font-weight: 400;
-  color: #aaa;
+  color: #7a7a7a;
   padding: 8px 0;
   text-align: center;
 }
@@ -35,8 +35,8 @@
 }
 
 .calendar td {
-  font-size: 0.8125rem;
-  color: #888;
+  font-size: 1.0625rem;
+  color: #555;
   padding: 6px 0;
   text-align: center;
 }
@@ -68,19 +68,20 @@
 }
 
 .calendar__datetime {
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   color: #2a2a2a;
   margin-top: 10px;
+  white-space: nowrap;
 }
 
 .calendar__venue {
-  font-size: 0.8125rem;
-  color: #4a4a4a;
+  font-size: 1.0625rem;
+  color: #3a3a3a;
   margin-top: 4px;
 }
 
 .info__calendar-save {
   display: inline-flex;
   margin-top: 24px;
-  font-size: 0.8125rem;
+  font-size: 1.0625rem;
 }

@@ -26,7 +26,7 @@
 
 .dday__label {
   font-size: 0.75rem;
-  color: #999;
+  color: #777;
   margin-top: 6px;
   letter-spacing: 0.05em;
 }
@@ -39,7 +39,7 @@
 }
 
 .dday__message {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   color: #999;
 }
 
@@ -50,9 +50,9 @@
 }
 
 .info__dday .dday__message {
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   margin-top: 6px;
-  color: #bbb;
+  color: #6a6a6a;
 }
 
 .dday__counter--small {
@@ -60,15 +60,15 @@
 }
 
 .dday__counter--small .dday__number {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .dday__counter--small .dday__separator {
-  font-size: 1rem;
+  font-size: 1.125rem;
   padding-top: 2px;
 }
 
 .dday__counter--small .dday__label {
-  font-size: 0.5625rem;
+  font-size: 0.75rem;
   margin-top: 4px;
 }

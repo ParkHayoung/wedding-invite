@@ -80,7 +80,7 @@
 }
 
 .location__venue-name {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #3a3a3a;
   margin-bottom: 5px;
@@ -89,7 +89,7 @@
 }
 
 .location__address-text {
-  font-size: 0.8rem;
+  font-size: 0.9375rem;
   color: #888;
   line-height: 1.6;
 }
@@ -99,7 +99,7 @@
   width: 100%;
   justify-content: center;
   margin-bottom: 28px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #2a2a2a;
   border: 1px solid #d4cdc5;
   background: #fff;
@@ -115,7 +115,7 @@
 
 /* 길안내 앱 안내 문구 */
 .location__nav-title {
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
   letter-spacing: 0.1em;
   color: #aaa;
   margin-bottom: 12px;
@@ -159,7 +159,7 @@
 }
 
 .location__link-label {
-  font-size: 0.72rem;
+  font-size: 0.8125rem;
   color: #2a2a2a;
   letter-spacing: 0.02em;
 }
@@ -190,19 +190,19 @@
 }
 
 .transport__icon {
-  font-size: 0.95rem;
+  font-size: 1.0625rem;
 }
 
 .transport__title {
-  font-size: 0.82rem;
+  font-size: 1.0625rem;
   font-weight: 600;
   color: #4a4540;
   letter-spacing: 0.02em;
 }
 
 .transport__desc {
-  font-size: 0.78rem;
-  color: #777;
+  font-size: 1rem;
+  color: #555;
   line-height: 1.65;
   margin-bottom: 6px;
 }
@@ -221,8 +221,8 @@
 }
 
 .transport__bus-list li {
-  font-size: 0.76rem;
-  color: #777;
+  font-size: 1rem;
+  color: #555;
   line-height: 1.5;
   display: flex;
   align-items: center;
@@ -231,7 +231,7 @@
 
 .transport__bus-badge {
   flex-shrink: 0;
-  font-size: 0.66rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: #7a6e64;
   background: #ede9e3;
@@ -245,22 +245,23 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 4px;
+  gap: 22px;
+  margin-top: 18px;
 }
 
 .transport__parking-list li {
-  font-size: 0.76rem;
-  color: #777;
+  font-size: 1rem;
+  color: #555;
   line-height: 1.55;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  word-break: keep-all;
 }
 
 .transport__parking-badge {
   align-self: flex-start;
-  font-size: 0.66rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: #8b6a5a;
   background: #f2e8e3;
@@ -271,15 +272,20 @@
 
 .transport__parking-list em {
   font-style: normal;
-  color: #b07060;
-  font-weight: 500;
+  font-weight: 700;
+  color: #a8532f;
+  background: #f7e2d6;
+  padding: 1px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 
 .transport__addr-label {
   display: inline-block;
-  font-size: 0.63rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: #aaa;
+  color: #888;
   letter-spacing: 0.02em;
   margin-right: 4px;
   vertical-align: baseline;
